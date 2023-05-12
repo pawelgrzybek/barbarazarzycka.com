@@ -1,3 +1,4 @@
+import Link from "next/link.js";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -17,7 +18,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <header className="header">
+          <Link href="/" className="logo">
+            Barbara Zarzycka
+          </Link>
+          <p className="tagline">
+            Marketing Executive Account Developer at the Institute of Physics
+            Publishing
+          </p>
+        </header>
+        {children}
+      </body>
     </html>
   );
 }
