@@ -45,7 +45,19 @@ const post = {
       name: "content",
       title: "Content",
       type: "array",
-      of: [{ type: "block" }, { type: "image" }],
+      of: [
+        { type: "block" },
+        {
+          type: "image",
+          fields: [
+            {
+              name: "alt",
+              type: "string",
+              title: "Alternative text description",
+            },
+          ],
+        },
+      ],
     },
   ],
   initialValue: () => ({
