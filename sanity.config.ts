@@ -6,9 +6,9 @@ export default defineConfig({
   title: "Barbara Zarzycka",
   projectId: "2am8kkp5",
   dataset: "production",
+  apiVersion: "2023-05-06",
   plugins: [deskTool()],
   basePath: "/admin",
-  apiVersion: "2023-05-06",
   schema: {
     types: schemas,
   },

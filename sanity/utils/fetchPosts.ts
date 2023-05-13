@@ -1,18 +1,15 @@
-import { createClient, groq } from "next-sanity";
+import { groq } from "next-sanity";
 import { Post } from "@/types/project.js";
+import client from "./client";
+
+const query = groq`*[_type == "post"] | order(date desc) {
+  _id,
+  title,
+  "slug": slug.current,
+  "date": date,
+  description
+}`;
 
 export default async function fetchPosts(): Promise<Post[]> {
-  const client = createClient({
-    projectId: "2am8kkp5",
-    dataset: "production",
-    apiVersion: "2023-05-06",
-    useCdn: false,
-  });
-
-  return client.fetch(groq`*[_type == "post"]{
-    _id,
-    title,
-    "slug": slug.current,
-    "date": date,
-  }`);
+  return client.fetch(query);
 }

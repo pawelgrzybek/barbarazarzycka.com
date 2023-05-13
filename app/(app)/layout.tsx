@@ -28,7 +28,16 @@ export default function RootLayout({
             Publishing
           </p>
         </header>
-        {children}
+        <main>{children}</main>
+        <footer className="footer">
+          © 2023 Copyright Pawel Grzybek. All rights reserved.
+          <br />
+          This site is built by{" "}
+          <a href="https://pawelgrzybek.com">Paweł Grzybek</a> using{" "}
+          <a href="https://nextjs.org">Next.js</a>,{" "}
+          <a href="http://sanity.io">Sanity</a> and it is hosted on{" "}
+          <a href="https://vercel.com">Vercel</a>.
+        </footer>
       </body>
     </html>
   );

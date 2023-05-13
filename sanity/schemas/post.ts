@@ -22,12 +22,35 @@ const post = {
       type: "date",
     },
     {
+      name: "category",
+      title: "Category",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          options: {
+            disableNew: true,
+          },
+          to: [{ type: "category" }],
+        },
+      ],
+    },
+    {
+      name: "description",
+      title: "Description",
+      type: "text",
+      rows: 4,
+    },
+    {
       name: "content",
       title: "Content",
       type: "array",
       of: [{ type: "block" }, { type: "image" }],
     },
   ],
+  initialValue: () => ({
+    date: new Date().toISOString().substr(0, 10),
+  }),
   orderings: [
     {
       title: "Publish Date, New",
