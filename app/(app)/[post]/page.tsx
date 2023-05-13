@@ -1,8 +1,10 @@
-import { client, fetchPost } from "@/sanity/utils";
+import { fetchPost } from "@/sanity/utils";
 import { PortableText } from "@portabletext/react";
-import urlBuilder from "@sanity/image-url";
-import { getImageDimensions } from "@sanity/asset-utils";
 import styles from "./page.module.css";
+import {
+  PortableTextComponentImage,
+  PortableTextComponentYouTube,
+} from "../components";
 
 type Props = {
   params: {
@@ -10,39 +12,27 @@ type Props = {
   };
 };
 
-export const metadata = {
-  title: "🔥",
-  description: "🍝",
-};
+export async function generateMetadata({ params }: Props) {
+  const { title, description } = await fetchPost(params.post);
 
-const SampleImageComponent = ({ value }: any) => {
-  const { width, height } = getImageDimensions(value);
-
-  return (
-    <img
-      src={urlBuilder(client).image(value).url()}
-      alt={value.alt || " "}
-      loading="lazy"
-      width={width}
-      height={height}
-    />
-  );
-};
+  return {
+    title: `${title} | ${process.env.title}`,
+    description,
+  };
+}
 
 export default async function PostPage({ params }: Props) {
-  const slug = params.post;
-  const post = await fetchPost(slug);
-  console.log(post);
+  const { title, content } = await fetchPost(params.post);
 
   return (
     <article className={styles.article}>
-      <h1>{post.title}</h1>
+      <h1>{title}</h1>
       <PortableText
-        value={post.content}
+        value={content}
         components={{
-          // ...
           types: {
-            image: SampleImageComponent,
+            image: PortableTextComponentImage,
+            youtube: PortableTextComponentYouTube,
           },
         }}
       />

@@ -57,6 +57,18 @@ const post = {
             },
           ],
         },
+        {
+          name: "youtube",
+          type: "object",
+          title: "YouTube Embed",
+          fields: [
+            {
+              name: "id",
+              type: "string",
+              title: "YouTube video ID",
+            },
+          ],
+        },
       ],
     },
   ],

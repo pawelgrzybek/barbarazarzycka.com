@@ -1,14 +1,13 @@
-import Link from "next/link.js";
+import Link from "next/link";
+import Image from "next/image";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title:
-    "Barbara Zarzycka - Marketing Executive Account Developer at the Institute of Physics Publishing",
-  description:
-    "Marketing Executive Account Developer at the Institute of Physics Publishing",
+  title: `${process.env.title} | ${process.env.description}`,
+  description: process.env.description,
 };
 
 export default function RootLayout({
@@ -21,12 +20,18 @@ export default function RootLayout({
       <body className={inter.className}>
         <header className="header">
           <Link href="/" className="logo">
-            Barbara Zarzycka
+            <Image
+              className="logo__image"
+              src="/logo.jpg"
+              alt="Barbara Zarzycka"
+              width={200}
+              height={200}
+            />
+            <div className="logo__text">
+              <div className="logo__title">{process.env.title}</div>
+              <div className="logo__tagline">{process.env.description}</div>
+            </div>
           </Link>
-          <p className="tagline">
-            Marketing Executive Account Developer at the Institute of Physics
-            Publishing
-          </p>
         </header>
         <main>{children}</main>
         <footer className="footer">
