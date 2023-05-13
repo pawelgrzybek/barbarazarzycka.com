@@ -6,5 +6,6 @@ export type Post = {
   slug: string;
   date: Date;
   description: string;
+  categories: { name: string; slug: string }[];
   content: PortableTextBlock[];
 };

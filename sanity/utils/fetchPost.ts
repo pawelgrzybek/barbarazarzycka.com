@@ -1,5 +1,5 @@
 import { groq } from "next-sanity";
-import { Post } from "@/types/project.js";
+import { Post } from "@/types/Post.js";
 import client from "./client";
 
 const query = groq`*[_type == "post" && slug.current == $slug][0]{

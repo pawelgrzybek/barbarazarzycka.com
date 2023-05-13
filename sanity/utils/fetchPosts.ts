@@ -1,5 +1,5 @@
 import { groq } from "next-sanity";
-import { Post } from "@/types/project.js";
+import { Post } from "@/types/Post.js";
 import client from "./client";
 
 const query = groq`*[_type == "post"] | order(date desc) {
@@ -7,7 +7,8 @@ const query = groq`*[_type == "post"] | order(date desc) {
   title,
   "slug": slug.current,
   "date": date,
-  description
+  description,
+  "categories": category[]->{"name": category, "slug": slug.current}
 }`;
 
 export default async function fetchPosts(): Promise<Post[]> {
