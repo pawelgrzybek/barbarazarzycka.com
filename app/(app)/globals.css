@@ -18,7 +18,7 @@
 }
 
 ::selection {
-  background: var(--color-link);
+  background: var(--color-brand);
   color: #fff;
   text-shadow: none;
 }
