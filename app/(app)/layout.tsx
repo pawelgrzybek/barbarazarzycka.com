@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import "./globals.css";
@@ -5,9 +6,16 @@ import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: `${process.env.title} | ${process.env.description}`,
+export const metadata: Metadata = {
+  title: process.env.title,
   description: process.env.description,
+  generator: "Next.js",
+  authors: [{ name: "Paweł Grzybek", url: "https://pawelgrzybek.com" }],
+  openGraph: {
+    title: process.env.title,
+    description: process.env.description,
+    images: "/og.jpg",
+  },
 };
 
 export default function RootLayout({
