@@ -1,0 +1,7 @@
+.article > :where(*:not(*:last-child)) {
+  margin-block-end: var(--lh);
+}
+
+.categoryDescription {
+  margin-block-start: var(--lh);
+}

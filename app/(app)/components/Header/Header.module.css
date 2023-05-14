@@ -1,0 +1,26 @@
+.header {
+  margin-block-end: calc(var(--lh) * 2);
+  padding-block-end: calc(var(--lh) * 2);
+  position: relative;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--lh) * -1);
+  bottom: 0;
+  width: calc(100% + 2 * var(--lh));
+  height: 1px;
+  background: red;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5) 50%,
+    transparent 0,
+    transparent
+  );
+  background-size: 5px 1px;
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(to left, #fff 10%, transparent),
+    linear-gradient(black, black);
+}

@@ -1,3 +1,19 @@
+.meta {
+  color: var(--color-gray);
+  line-height: calc(var(--lh) * 1.5);
+  font-size: 0.875rem;
+}
+
+.metaLink {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.metaLink:hover {
+  color: var(--color-brand);
+}
+
 .article > :where(*:not(*:last-child)) {
   margin-block-end: var(--lh);
 }

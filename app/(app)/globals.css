@@ -27,8 +27,30 @@ body {
 }
 
 .footer {
+  font-size: 0.875rem;
   padding-block-start: calc(var(--lh) * 2);
-  box-shadow: 0 -1px 0 0 var(--color-border);
+  position: relative;
+}
+
+.footer::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--lh) * -1);
+  top: 0;
+  width: calc(100% + 2 * var(--lh));
+  height: 1px;
+  background: red;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5) 50%,
+    transparent 0,
+    transparent
+  );
+  background-size: 5px 1px;
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(to left, #fff 10%, transparent),
+    linear-gradient(black, black);
 }
 
 .logo {
@@ -60,4 +82,10 @@ img {
 
 a {
   color: var(--color-brand);
+}
+
+h1 {
+  font-size: calc(var(--fz) * 2);
+  line-height: calc(var(--lh) * 1.5);
+  font-weight: 700;
 }

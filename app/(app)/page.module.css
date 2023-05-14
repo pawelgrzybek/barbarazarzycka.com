@@ -1,16 +1,9 @@
-.title {
-  font-weight: 700;
-  margin-block-end: calc(var(--lh) * 2);
-  padding-block-end: calc(var(--lh) * 2);
-  box-shadow: 0 1px 0 0 var(--color-border);
-}
-
 .list {
   list-style: none;
 }
 
 .item {
-  margin-block-end: calc(var(--lh) * 2);
+  margin-block-end: calc(var(--lh) * 3);
 }
 
 .meta {

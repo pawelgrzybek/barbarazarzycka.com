@@ -8,6 +8,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   "slug": slug.current,
   "date": date,
   content,
+  "categories": category[]->{"name": category, "slug": slug.current}
 }`;
 
 export default async function fetchPost(slug: string): Promise<Post> {
