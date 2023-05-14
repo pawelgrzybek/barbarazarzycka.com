@@ -1,32 +1,34 @@
 import styles from "./page.module.css";
-import { Header } from "../../components";
-import { fetchCategory } from "@/sanity/utils/";
+import { Header, Posts } from "../../components";
+import { fetchCategory, fetchPostsInCategory } from "@/sanity/utils/";
 
-type Props = {
+interface PostPageProps {
   params: {
     category: string;
   };
-};
+}
 
-export async function generateMetadata({ params }: Props) {
-  const { category, description } = await fetchCategory(params.category);
+export async function generateMetadata({ params }: PostPageProps) {
+  const { name } = await fetchCategory(params.category);
 
   return {
-    title: `${category} | ${process.env.title}`,
-    description,
+    title: `${name} | ${process.env.title}`,
+    description: `${process.env.description}`,
   };
 }
 
-export default async function PostPage({ params }: Props) {
-  const { category, description, _id } = await fetchCategory(params.category);
-  console.log({ _id });
+export default async function PostPage({ params }: PostPageProps) {
+  const [{ name }, posts] = await Promise.all([
+    await fetchCategory(params.category),
+    await fetchPostsInCategory(params.category),
+  ]);
+
   return (
     <article className={styles.article}>
       <Header>
-        <h1>Posts in the category: {category}</h1>
-        <p className={styles.categoryDescription}>{description}</p>
+        <h1>Posts in the category: {name}</h1>
       </Header>
-      <p>This feature is coming 👋</p>
+      <Posts posts={posts} />
     </article>
   );
 }

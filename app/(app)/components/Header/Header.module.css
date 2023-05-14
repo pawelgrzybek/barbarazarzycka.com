@@ -14,8 +14,8 @@
   background: red;
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5) 50%,
+    var(--color-border),
+    var(--color-border) 50%,
     transparent 0,
     transparent
   );

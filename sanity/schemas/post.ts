@@ -22,8 +22,8 @@ const post = {
       type: "date",
     },
     {
-      name: "category",
-      title: "Category",
+      name: "categories",
+      title: "Categories",
       type: "array",
       of: [
         {

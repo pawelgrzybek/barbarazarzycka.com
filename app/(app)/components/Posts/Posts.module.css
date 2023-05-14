@@ -1,0 +1,41 @@
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  margin-block-end: calc(var(--lh) * 3);
+}
+
+.meta {
+  color: var(--color-gray);
+  line-height: calc(var(--lh) * 1.5);
+  font-size: 0.875rem;
+}
+
+.metaLink {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.metaLink:hover {
+  color: var(--color-brand);
+}
+
+.postLink {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.postLink:hover {
+  color: var(--color-brand);
+}
+
+.postTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-block-end: var(--lh);
+}

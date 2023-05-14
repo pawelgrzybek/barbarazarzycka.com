@@ -5,8 +5,8 @@ interface HeaderProps {
   children: ReactNode;
 }
 
-const Title = ({ children }: HeaderProps) => (
+const Header = ({ children }: HeaderProps) => (
   <header className={styles.header}>{children}</header>
 );
 
-export default Title;
+export default Header;

@@ -4,8 +4,8 @@ const category = {
   type: "document",
   fields: [
     {
-      name: "category",
-      title: "Category",
+      name: "name",
+      title: "Name",
       type: "string",
     },
     {
@@ -13,13 +13,8 @@ const category = {
       title: "Slug",
       type: "slug",
       options: {
-        source: "category",
+        source: "name",
       },
-    },
-    {
-      name: "description",
-      title: "Description",
-      type: "text",
     },
   ],
 };

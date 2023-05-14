@@ -8,7 +8,7 @@ const query = groq`*[_type == "post"] | order(date desc) {
   "slug": slug.current,
   "date": date,
   description,
-  "categories": category[]->{"name": category, "slug": slug.current}
+  "categories": categories[]->{name, "slug": slug.current}
 }`;
 
 export default async function fetchPosts(): Promise<Post[]> {
