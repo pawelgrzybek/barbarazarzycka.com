@@ -20,6 +20,10 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: `${title} | ${process.env.title}`,
     description,
+    openGraph: {
+      title: `${title} | ${process.env.title}`,
+      description,
+    },
   };
 }
 

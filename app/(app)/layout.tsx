@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   description: process.env.description,
   generator: "Next.js",
   authors: [{ name: "Paweł Grzybek", url: "https://pawelgrzybek.com" }],
+  metadataBase: new URL("https://barbarazarzycka.com"),
   openGraph: {
     title: process.env.title,
     description: process.env.description,
