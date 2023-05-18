@@ -42,6 +42,14 @@ const post = {
       rows: 4,
     },
     {
+      name: "poster",
+      title: "Poster",
+      type: "image",
+      description:
+        "Open Graph image for sicial media platforms (ideally 1200x630px)",
+      rows: 4,
+    },
+    {
       name: "content",
       title: "Content",
       type: "array",

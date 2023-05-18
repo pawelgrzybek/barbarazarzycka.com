@@ -16,6 +16,9 @@ type Props = {
 
 export async function generateMetadata({ params }: Props) {
   const { title, description } = await fetchPost(params.post);
+  const post = await fetchPost(params.post);
+
+  console.log({ post });
 
   return {
     title: `${title} | ${process.env.title}`,
