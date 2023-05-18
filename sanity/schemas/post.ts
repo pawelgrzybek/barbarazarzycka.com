@@ -45,8 +45,7 @@ const post = {
       name: "poster",
       title: "Poster",
       type: "image",
-      description:
-        "Open Graph image for sicial media platforms (ideally 1200x630px)",
+      description: "Open Graph image for sicial media platforms",
       rows: 4,
     },
     {
