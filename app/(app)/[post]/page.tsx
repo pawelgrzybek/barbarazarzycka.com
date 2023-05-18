@@ -15,10 +15,7 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props) {
-  const { title, description } = await fetchPost(params.post);
-  const post = await fetchPost(params.post);
-
-  console.log({ post });
+  const { title, description, poster } = await fetchPost(params.post);
 
   return {
     title: `${title} | ${process.env.title}`,
@@ -26,6 +23,7 @@ export async function generateMetadata({ params }: Props) {
     openGraph: {
       title: `${title} | ${process.env.title}`,
       description,
+      images: `${poster}?w=1200&h=630&fit=crop`,
     },
   };
 }
