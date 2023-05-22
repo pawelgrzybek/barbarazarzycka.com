@@ -10,6 +10,10 @@ const Posts = ({ posts }: PostsProps) => (
   <ul className={styles.list}>
     {posts.map((post) => (
       <li className={styles.item} key={post._id}>
+        <Link href={post.slug} className={styles.postLink}>
+          <h2 className={styles.postTitle}>{post.title}</h2>
+        </Link>
+        <p>{post.description}</p>
         <p className={styles.meta}>
           Published:{" "}
           <time dateTime={post.date.toString()}>
@@ -27,10 +31,6 @@ const Posts = ({ posts }: PostsProps) => (
             </Link>,
           ])}
         </p>
-        <Link href={post.slug} className={styles.postLink}>
-          <h2 className={styles.postTitle}>{post.title}</h2>
-        </Link>
-        <p>{post.description}</p>
       </li>
     ))}
   </ul>

@@ -12,6 +12,7 @@
   color: var(--color-gray);
   line-height: calc(var(--lh) * 1.5);
   font-size: 0.875rem;
+  margin-block-start: var(--lh);
 }
 
 .metaLink {
