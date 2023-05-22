@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     types: {
-      "application/rss+xml": [{ url: "rss.xml", title: "RSS Feed" }],
+      "application/rss+xml": [{ url: "rss.xml", title: "barbarazarzycka.com" }],
     },
   },
 };
