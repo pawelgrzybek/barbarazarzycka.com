@@ -3,7 +3,7 @@
   --lh: 1.75rem;
 
   --color-background: #fafaf9;
-  --color-foreground: #1c1917;
+  --color-foreground: #2b2624;
   --color-gray: #78716c;
   --color-border: #a8a29e;
   --color-brand: #fb7185;
@@ -12,7 +12,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: #1c1917;
-    --color-foreground: #fafaf9;
+    --color-foreground: #f0f0f0;
     --color-brand: #fda4af;
   }
 }
@@ -40,6 +40,8 @@ html {
 }
 
 body {
+  background-color: (--color-background);
+  color: var(--color-foreground);
   font-size: var(--fz);
   line-height: var(--lh);
   font-family: serif;
@@ -176,4 +178,14 @@ ol {
 li ul,
 li ol {
   margin: 0 0 0 var(--lh);
+}
+
+figcaption {
+  font-size: 0.875rem;
+  opacity: 0.7;
+}
+
+blockquote {
+  margin: 0 0 var(--lh) var(--lh);
+  font-style: italic;
 }

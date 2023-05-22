@@ -24,6 +24,11 @@ export const metadata: Metadata = {
     description: process.env.description,
     images: "/og.jpg",
   },
+  alternates: {
+    types: {
+      "application/rss+xml": [{ url: "rss.xml", title: "RSS Feed" }],
+    },
+  },
 };
 
 export default function RootLayout({

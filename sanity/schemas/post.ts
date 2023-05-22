@@ -62,6 +62,11 @@ const post = {
               type: "string",
               title: "Alternative text description",
             },
+            {
+              name: "caption",
+              type: "string",
+              title: "Caption",
+            },
           ],
         },
         {
